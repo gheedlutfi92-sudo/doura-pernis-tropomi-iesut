@@ -1,0 +1,10 @@
+numpy
+pandas
+scipy
+scikit-learn
+joblib
+xarray
+netCDF4
+matplotlib
+pymannkendall
+python-docx

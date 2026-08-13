@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.csv
+*.nc
+*.tif
+*.gdb/
+*.aprx
+.DS_Store
+Thumbs.db
