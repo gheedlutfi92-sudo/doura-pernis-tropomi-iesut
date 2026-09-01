@@ -536,7 +536,13 @@ def run_single_site(pollutant):
 
     if Config.RUN_SENSITIVITY:
         arcpy.SetProgressorLabel(f"[+] Sensitivity analysis…")
-        buffer_sensitivity_analysis(df, pollutant)
+        sens_df = buffer_sensitivity_analysis(df, pollutant)
+        if sens_df is not None:
+            out_dir = os.path.join(os.path.dirname(os.path.dirname(Config.GDB_PATH)), "outputs")
+            os.makedirs(out_dir, exist_ok=True)
+            sens_path = os.path.join(out_dir, f"sensitivity_{_site_key}_{pollutant}.csv")
+            sens_df.to_csv(sens_path, index=False)
+            msg(f"[SENSITIVITY] Saved: {sens_path}")
     else:
         msg("[SENSITIVITY] Skipped")
 
