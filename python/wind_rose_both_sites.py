@@ -126,12 +126,6 @@ print_summary("Doura", sectors_d, freq_d)
 fig, ax = plt.subplots(1, 1, figsize=(9, 9), subplot_kw={"polar": True}, facecolor="white")
 bottom_d = plot_wind_rose(ax, sectors_d, freq_d)
 calm_d = (df_d["ws_avg"] < 0.5).mean() * 100
-ax.set_title(
-    "Wind Rose — Abu Ghraib Station, Baghdad\n"
-    "(Study period: 2018–2019 & 2022–2024, excl. COVID)\n"
-    f"N = {len(df_d):,} days",
-    fontsize=12, fontweight="bold", pad=20
-)
 ax.legend(title="Wind Speed (daily avg)", title_fontsize=10,
           loc="lower right", bbox_to_anchor=(1.30, 0.05), fontsize=10, framealpha=0.9)
 ax.annotate(f"Calm: {calm_d:.1f}%", xy=(0.01, 0.01), xycoords="axes fraction",
@@ -148,8 +142,6 @@ print(f"\nSaved: {out_d1}")
 
 # Seasonal wind roses — Doura
 fig2, axes2 = plt.subplots(2, 2, figsize=(14, 14), subplot_kw={"polar": True}, facecolor="white")
-fig2.suptitle("Seasonal Wind Roses — Abu Ghraib Station, Baghdad\n(2018–2019 & 2022–2024)",
-              fontsize=14, fontweight="bold", y=1.01)
 angles_rad = np.deg2rad(sectors_d)
 sector_width_rad = 2 * np.pi / N_SECTORS
 for ax2, (season_name, months) in zip(axes2.flat, SEASONS.items()):
@@ -225,12 +217,6 @@ print_summary("Rotterdam", sectors_r, freq_r)
 fig3, ax3 = plt.subplots(1, 1, figsize=(9, 9), subplot_kw={"polar": True}, facecolor="white")
 bottom_r = plot_wind_rose(ax3, sectors_r, freq_r)
 calm_r = (df_r["ws"] < 0.5).mean() * 100
-ax3.set_title(
-    "Wind Rose — Rotterdam-Geulhaven Station (KNMI 343)\n"
-    "(Study period: 2018–2019 & 2022–2024, excl. COVID)\n"
-    f"N = {len(df_r):,} hourly observations",
-    fontsize=12, fontweight="bold", pad=20
-)
 ax3.legend(title="Wind Speed (hourly mean)", title_fontsize=10,
            loc="lower right", bbox_to_anchor=(1.30, 0.05), fontsize=10, framealpha=0.9)
 ax3.annotate(f"Calm: {calm_r:.1f}%", xy=(0.01, 0.01), xycoords="axes fraction",
@@ -247,8 +233,6 @@ print(f"\nSaved: {out_r1}")
 
 # Seasonal wind roses — Rotterdam
 fig4, axes4 = plt.subplots(2, 2, figsize=(14, 14), subplot_kw={"polar": True}, facecolor="white")
-fig4.suptitle("Seasonal Wind Roses — Rotterdam-Geulhaven (KNMI 343)\n(2018–2019 & 2022–2024)",
-              fontsize=14, fontweight="bold", y=1.01)
 angles_rad_r = np.deg2rad(sectors_r)
 for ax4, (season_name, months) in zip(axes4.flat, SEASONS.items()):
     df_rs = df_r[df_r["month"].isin(months)]
@@ -355,13 +339,6 @@ for i in range(8):
         ha="center", va="bottom", fontsize=8,
         color="#d73027" if residuals8[i] >= 0 else "#4575b4", fontweight="bold"
     )
-
-ax5.set_title(
-    "NO₂ Pollution Rose — Doura Refinery, Baghdad\n"
-    "Mean IESUT Industrial NO₂ Residual by Wind Sector\n"
-    "(2018–2019 & 2022–2024, excl. COVID)",
-    fontsize=12, fontweight="bold", pad=20
-)
 
 red_patch  = plt.Rectangle((0,0),1,1, facecolor="#d73027", alpha=0.85)
 blue_patch = plt.Rectangle((0,0),1,1, facecolor="#4575b4", alpha=0.85)

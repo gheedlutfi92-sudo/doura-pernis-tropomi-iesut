@@ -28,9 +28,8 @@ python/              Standalone Python analysis scripts (run outside ArcGIS Pro)
 | `python/rivm_pernis_comparison.py` | Ground validation of TROPOMI against the RIVM/DCMR Rotterdam monitoring network |
 | `python/eutl_cross_validation.py` | Cross-validates annual mean IESUT NO₂ residuals at Pernis against EUTL-verified EU ETS NOx emissions, 2018–2024 (Section 5.5 of the dissertation) |
 | `python/eu_ets_correlation.py` | Exploratory correlation of monthly EU ETS carbon (EUA) price against Pernis IESUT residuals; superseded by `eutl_cross_validation.py` above and not cited in the dissertation |
-| `python/sen_slope_projection.py` | Mann-Kendall trend test and Sen's slope estimation; 10-year emissions projection |
+| `python/sen_slope_scenarios.py` | Mann-Kendall trend test and Sen's slope estimation; business-as-usual and regulatory-adoption emissions scenario projections |
 | `python/wind_rose_both_sites.py` | Wind rose and NO₂ pollution rose generation for both sites |
-| `python/md_to_docx.py` | Converts the dissertation Markdown draft to a formatted Word document |
 
 ## Data availability
 
