@@ -7,4 +7,3 @@ xarray
 netCDF4
 matplotlib
 pymannkendall
-python-docx
