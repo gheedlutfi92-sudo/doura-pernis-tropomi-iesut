@@ -15,8 +15,9 @@ Fields added:
 
 import arcpy
 import datetime
+import os
 
-GDB = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final\dissertation_final\dissertation_final.gdb"
+GDB = os.path.join(os.environ.get("IESUT_DATA_DIR", "./data"), "dissertation_final.gdb")
 
 FEATURE_CLASSES = [
     "IESUT_doura_no2",

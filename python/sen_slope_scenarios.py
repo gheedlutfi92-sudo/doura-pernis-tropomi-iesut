@@ -65,7 +65,7 @@ POLLUTANT = "no2"   # "no2" or "so2"
 POLLUTANT_LABEL = "NO\u2082" if POLLUTANT == "no2" else "SO\u2082"
 
 # -- Paths --------------------------------------------------------------
-BASE    = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final\outputs"
+BASE    = os.path.join(os.environ.get("IESUT_DATA_DIR", "./data"), "outputs")
 DOURA   = os.path.join(BASE, f"IESUT_doura_{POLLUTANT}_table.xls")
 PERNIS  = os.path.join(BASE, f"IESUT_pernis_{POLLUTANT}_table.xls")
 

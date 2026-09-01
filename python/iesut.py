@@ -31,9 +31,9 @@ class Config:
     """All user-configurable parameters in one place."""
 
     # Paths
-    GDB_PATH = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final\dissertation_final\dissertation_final.gdb"
-    OUTPUT_DIR = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final\outputs"
-    WIND_DATA_PATH = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final\meteorological_data\meteorological_dataset_baghdad.xlsx"
+    GDB_PATH = os.path.join(os.environ.get("IESUT_DATA_DIR", "./data"), "dissertation_final.gdb")
+    OUTPUT_DIR = os.path.join(os.environ.get("IESUT_DATA_DIR", "./data"), "outputs")
+    WIND_DATA_PATH = os.path.join(os.environ.get("IESUT_DATA_DIR", "./data"), "meteorological_data", "meteorological_dataset_baghdad.xlsx")
 
     # Site definitions
     SITES = {

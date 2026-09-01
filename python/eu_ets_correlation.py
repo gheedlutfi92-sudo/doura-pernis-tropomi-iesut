@@ -19,7 +19,7 @@ import pandas as pd
 from scipy import stats
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-BASE    = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final"
+BASE    = os.environ.get("IESUT_DATA_DIR", "./data")
 EUA_FILE = os.path.join(BASE, "data", "EU_ETS", "eu_ets_eua_price_daily_2018_2026.csv")
 NO2_FILE = os.path.join(BASE, "outputs", "IESUT_pernis_no2_table.xls")
 SO2_FILE = os.path.join(BASE, "outputs", "IESUT_pernis_so2_table.xls")

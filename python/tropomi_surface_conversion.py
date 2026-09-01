@@ -15,7 +15,7 @@ import xarray as xr
 import os
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-BASE      = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final"
+BASE      = os.environ.get("IESUT_DATA_DIR", "./data")
 GEE_CSV   = os.path.join(BASE, "data", "TROPOMI_GEE_Exports", "doura_monthly_samples_v33.csv")
 PBLH_NC   = os.path.join(BASE, "data", "ERA5", "era5_pblh_monthly.nc")
 MOE_DIR   = os.path.join(BASE, "data", "Ground_Stations", "Baghdad_Ministry_of_Environment")

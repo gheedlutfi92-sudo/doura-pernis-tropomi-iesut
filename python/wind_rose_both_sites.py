@@ -21,8 +21,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-BASE_FINAL = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final"
-BASE_OLD   = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation"
+BASE_FINAL = os.environ.get("IESUT_DATA_DIR", "./data")
+BASE_OLD   = os.environ.get("IESUT_LEGACY_DATA_DIR", BASE_FINAL)
 
 DOURA_MET  = os.path.join(BASE_FINAL, "data", "Ground_Stations",
                            "Baghdad_Meteorological", "meteorological_dataset_baghdad.xlsx")

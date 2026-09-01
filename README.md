@@ -30,6 +30,32 @@ python/              Standalone Python analysis scripts (run outside ArcGIS Pro)
 | `python/eu_ets_correlation.py` | Exploratory correlation of monthly EU ETS carbon (EUA) price against Pernis IESUT residuals; superseded by `eutl_cross_validation.py` above and not cited in the dissertation |
 | `python/sen_slope_scenarios.py` | Mann-Kendall trend test and Sen's slope estimation; business-as-usual and regulatory-adoption emissions scenario projections |
 | `python/wind_rose_both_sites.py` | Wind rose and NO₂ pollution rose generation for both sites |
+| `python/monthly_time_series.py` | Monthly IESUT NO₂ residual time series and classical seasonal decomposition (trend/seasonal/residual) for both sites |
+
+## Data setup
+
+None of the scripts hardcode a path to a specific machine. Each reads its data root from an environment variable, falling back to a local `./data` folder if unset:
+
+```
+IESUT_DATA_DIR         Root folder containing the geodatabase, ERA5/meteorological data, and script outputs (default: ./data)
+IESUT_LEGACY_DATA_DIR   Root folder containing the Rotterdam KNMI ground-station data used by wind_rose_both_sites.py (default: same as IESUT_DATA_DIR)
+```
+
+Set these before running a script, e.g. on Windows PowerShell:
+
+```powershell
+$env:IESUT_DATA_DIR = "C:\path\to\your\data"
+python python/iesut.py
+```
+
+or on macOS/Linux:
+
+```bash
+export IESUT_DATA_DIR=/path/to/your/data
+python python/iesut.py
+```
+
+Alternatively, just place your data in a `data/` folder alongside the scripts and skip the environment variables entirely.
 
 ## Data availability
 
@@ -55,10 +81,6 @@ ArcPy scripts (`arcgis_toolbox/`) require ArcGIS Pro (tested on 3.x) with its bu
 If referencing this methodology, please cite the dissertation:
 
 > Albazrkan, G. (2026) *Quantifying Industrial Atmospheric Emissions in Contrasting Regulatory Environments Using TROPOMI Sentinel-5P and Machine Learning: A Comparative Study of Doura Refinery, Baghdad, Iraq and Shell Pernis, Rotterdam, Netherlands*. MSc dissertation, University of Aberdeen.
-
-## Generative AI Use
-
-Generative AI (Claude, Anthropic) assisted with code development, debugging, and documentation for this repository, under the direction and review of the author. See the dissertation's Generative AI Declaration (Appendix C) for full details. All analytical decisions and interpretation of results are the author's own.
 
 ## License
 

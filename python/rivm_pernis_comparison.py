@@ -17,7 +17,7 @@ import pandas as pd
 import xarray as xr
 
 # ── Paths ──────────────────────────────────────────────────────────────────
-BASE     = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final"
+BASE     = os.environ.get("IESUT_DATA_DIR", "./data")
 PBLH_NC  = os.path.join(BASE, "data", "ERA5", "era5_pblh_monthly.nc")
 RIVM_DIR = os.path.join(BASE, "data", "Ground_Stations", "Rotterdam_RIVM")
 GEE_CSV  = os.path.join(BASE, "data", "TROPOMI_GEE_Exports", "pernis_monthly_samples_v33.csv")

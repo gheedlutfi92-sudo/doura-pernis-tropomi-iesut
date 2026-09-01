@@ -17,7 +17,7 @@ import os
 import pandas as pd
 from scipy import stats
 
-BASE = r"C:\Users\HP\Desktop\proposal& dissertation\dissertation_final"
+BASE = os.environ.get("IESUT_DATA_DIR", "./data")
 NO2_TABLE = os.path.join(BASE, "outputs", "IESUT_pernis_no2_table.xls")
 
 # EUTL-reported verified NOx emissions for Shell Pernis (tonnes/year)
